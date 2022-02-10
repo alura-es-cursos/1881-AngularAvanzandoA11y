@@ -1,1 +1,104 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #272c3f;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+:focus {
+  outline: 2px solid orange;
+}
+
+.button-group {
+  text-align: right;
+  .button {
+    margin-left: 0.5rem;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  &.button-primary {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  &.button-secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+}
+
+/*
+* ESTILOS DEL MODAL
+*/
+
+.modal-overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  .modal-content {
+    padding: 0 2rem 2rem 2rem;
+    margin: 2%;
+    min-width: 94%;
+    @media (min-width: 600px) {
+      min-width: 60%;
+    }
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    .modal-title {
+      border-bottom: solid 1px;
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/*
+* ESTILOS DE FORM
+*/
+
+.form-field {
+  margin-bottom: 1rem;
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  input {
+    width: 100%;
+    padding: 0.25rem;
+    font-size: 1rem;
+  }
+}
+
+.validation-error {
+  display: inline-block;
+  color: red;
+  margin-top: 0.5rem;
+}
