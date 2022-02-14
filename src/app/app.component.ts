@@ -19,7 +19,7 @@ export class AppComponent {
     console.log(this.component);
 
     this.component.instance.modalConfig = {
-      title: 'Formulario de registro',
+      title: 'Completa tu solicitud',
       component: this.component,
     };
   }

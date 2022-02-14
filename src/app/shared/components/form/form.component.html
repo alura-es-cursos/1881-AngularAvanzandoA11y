@@ -1,18 +1,55 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="submit()">
   <div class="form-field">
     <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" placeholder="Ingresa tu nombre" />
+    <input
+      type="text"
+      id="nombre"
+      placeholder="Ingresa tu nombre"
+      formControlName="nombre"
+    />
+    <span
+      class="validation-error"
+      *ngIf="form.get('nombre')?.errors?.['required']"
+      [attr.aria-invalid]="true"
+      >El nombre es requerido</span
+    >
   </div>
   <div class="form-field">
     <label for="apellidos">Apellidos</label>
-    <input type="text" id="apellidos" placeholder="Ingresa tus apellidos" />
+    <input
+      type="text"
+      id="apellidos"
+      placeholder="Ingresa tus apellidos"
+      formControlName="apellidos"
+    />
+    <span
+      class="validation-error"
+      *ngIf="form.get('apellidos')?.errors?.['required']"
+      >Los apellidos son requeridos</span
+    >
   </div>
   <div class="form-field">
     <label for="email">Correo electronico</label>
-    <input type="text" id="email" placeholder="Ingresa tu correo electronico" />
+    <input
+      type="text"
+      id="email"
+      placeholder="Ingresa tu correo electronico"
+      formControlName="email"
+    />
+    <span
+      class="validation-error"
+      *ngIf="form.get('email')?.errors?.['required']"
+      >El correo electronico es requerido</span
+    >
   </div>
   <div class="button-group">
-    <button class="button button-primary" type="submit">Enviar</button>
+    <button
+      class="button button-primary"
+      type="submit"
+      [attr.aria-disabled]="form.invalid"
+    >
+      Enviar
+    </button>
     <button
       class="button button-secondary"
       type="button"
