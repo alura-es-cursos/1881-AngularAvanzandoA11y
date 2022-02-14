@@ -1,5 +1,14 @@
-<div class="modal-overlay">
-  <div class="modal-content">
+<div
+  class="modal-overlay"
+  (keydown.esc)="modalConfig.component.destroy()"
+  (click)="modalConfig.component.destroy()"
+>
+  <div
+    class="modal-content"
+    (click)="$event.stopPropagation()"
+    appFocusTrap
+    appFocusBack
+  >
     <h1 class="modal-title">{{ modalConfig.title }}</h1>
     <app-form [component]="modalConfig.component"></app-form>
   </div>
