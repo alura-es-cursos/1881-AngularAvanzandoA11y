@@ -6,11 +6,13 @@
       id="nombre"
       placeholder="Ingresa tu nombre"
       formControlName="nombre"
+      [attr.aria-invalid]="form.get('nombre')?.['invalid']"
+      aria-describedby="error-nombre"
     />
     <span
+      id="error-nombre"
       class="validation-error"
       *ngIf="form.get('nombre')?.errors?.['required']"
-      [attr.aria-invalid]="true"
       >El nombre es requerido</span
     >
   </div>
@@ -21,6 +23,7 @@
       id="apellidos"
       placeholder="Ingresa tus apellidos"
       formControlName="apellidos"
+      [attr.aria-invalid]="form.get('apellidos')?.['invalid']"
     />
     <span
       class="validation-error"
@@ -35,6 +38,7 @@
       id="email"
       placeholder="Ingresa tu correo electronico"
       formControlName="email"
+      [attr.aria-invalid]="form.get('email')?.['invalid']"
     />
     <span
       class="validation-error"
